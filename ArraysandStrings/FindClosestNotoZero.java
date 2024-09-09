@@ -1,6 +1,6 @@
 package ArraysandStrings;
 
-class Main {
+public class FindClosestNotoZero {
 
     // get the absolute value
     public static float abs(float a){
