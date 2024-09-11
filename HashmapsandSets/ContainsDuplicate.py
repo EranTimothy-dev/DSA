@@ -22,3 +22,10 @@ class Solution:
                 return True
             s.add(number)
         return False
+
+        
+        
+if __name__ == "__main__":
+    nums = [1,2,3,1]
+    obj = Solution()
+    print(obj.containDuplicate(nums))
