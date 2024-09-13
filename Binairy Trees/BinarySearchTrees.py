@@ -20,11 +20,6 @@ def search_bst(node, target):
 
 
 
-
-
-
-
-
 if __name__ == "__main__":
 
     A = TreeNode(5)
