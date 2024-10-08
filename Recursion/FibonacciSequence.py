@@ -1,7 +1,38 @@
 from LinkedList.SinglyLinkedList import SinglyLinkedList
 
-
+@__cached__
 def fibonacciSequence(n):
+    """
+    Generates the nth Fibonacci sequence number using recursion and memoization to
+    optimize performance.
+
+    Args:
+        n (int): The position of the Fibonacci sequence number to generate.
+
+    Returns:
+        int: The nth Fibonacci sequence number.
+
+    Raises:
+        TypeError: If n is not an integer.
+
+    Examples:
+        >>> fibonacciSequence(0)
+        0
+        >>> fibonacciSequence(1)
+        1
+        >>> fibonacciSequence(2)
+        1
+        >>> fibonacciSequence(3)
+        2
+        >>> fibonacciSequence(4)
+        3
+        >>> fibonacciSequence(5)
+        5
+        >>> fibonacciSequence(6)
+        8
+        >>> fibonacciSequence(7)
+        13
+    """
     if n == 0 or n == 1:
         return n
     else:
