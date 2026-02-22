@@ -1,4 +1,4 @@
-package StacksandQueues;
+// package StacksandQueues;
 
 public class Queue {
     private String[] queue;

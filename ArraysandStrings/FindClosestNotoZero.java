@@ -1,4 +1,4 @@
-package ArraysandStrings;
+// package ArraysandStrings;
 
 public class FindClosestNotoZero {
 
