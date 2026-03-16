@@ -1,6 +1,6 @@
 from LinkedList.SinglyLinkedList import SinglyLinkedList
 
-@__cached__
+# @__cached__
 def fibonacciSequence(n):
     """
     Generates the nth Fibonacci sequence number using recursion and memoization to
