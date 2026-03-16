@@ -104,4 +104,42 @@ class BinarySeachTree {
         }
     }
 
+    void remove(int value) {
+        Node* nodeToRemove = find(value);
+        if (nodeToRemove == nullptr) {
+            cout << "Value not found in the tree." << endl;
+            return;
+        }
+        // case 1: node to remove has no children
+        if (nodeToRemove->left == nullptr && nodeToRemove->right == nullptr) {
+            if (nodeToRemove->parent == nullptr) {
+                root = nullptr; // removing the root node
+            } else if (nodeToRemove->parent->left == nodeToRemove) {
+                nodeToRemove->parent->left = nullptr;
+            } else {
+                nodeToRemove->parent->right = nullptr;
+            }
+        }
+        // case 2: node to remove has one child
+        if (nodeToRemove->left != nullptr && nodeToRemove->right == nullptr) {
+            if (nodeToRemove->parent == nullptr) { // where the node to remove is the root with a child
+                root = nodeToRemove->left;
+                root->parent = nullptr;
+            } else if (nodeToRemove->parent->left == nodeToRemove) {
+                nodeToRemove->parent->setLeftChild(nodeToRemove->left);
+            } else {
+                nodeToRemove->parent->setRightChild(nodeToRemove->left);
+            }
+        } else {
+            if (nodeToRemove->parent == nullptr) {
+                root = nodeToRemove->right;
+                root->parent = nullptr;
+            } else if (nodeToRemove->parent->left == nodeToRemove) {
+                nodeToRemove->parent->setLeftChild(nodeToRemove->right);
+            } else {
+                nodeToRemove->parent->setRightChild(nodeToRemove->right);
+            }
+        }
+    }
+
 };
