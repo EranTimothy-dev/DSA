@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -43,6 +44,18 @@ class BinarySeachTree {
         return nullptr;
     }
 
+    void output(Node* node, string order) {
+        if (order == "pre") {
+            preOrderOutput(node);
+        } else if (order == "in") {
+            inOrderOutput(node);
+        } else if (order == "post") {
+            postOrderOutput(node);
+        } else {
+            cout << "Invalid order specified. Please use 'pre', 'in', or 'post'." << endl;
+        }
+    }
+
     void preOrderOutput(Node* node) {
         if (node == nullptr) {
             return;
@@ -68,6 +81,27 @@ class BinarySeachTree {
         postOrderOutput(node->left);
         postOrderOutput(node->right);
         cout << node->data << " ";
+    }
+
+    void insert(int value) {
+    }
+
+    void insertBelow(Node* node, int value) {
+        if (node != nullptr) {
+            if (value < node->data) {
+                if (node->left == nullptr) {
+                    node->setLeftChild(new Node(value));
+                } else {
+                    insertBelow(node->left, value);
+                }
+            } else {
+                if (node->right == nullptr) {
+                    node->setRightChild(new Node(value));
+                } else {
+                    insertBelow(node->right, value);
+                }
+            }
+        }
     }
 
 };
