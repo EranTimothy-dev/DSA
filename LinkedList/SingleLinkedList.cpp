@@ -33,3 +33,15 @@ int findRecursive(linkedListNode* current, int value) {
         return findRecursive(current->next, value);
     }
 }
+
+void insert(int value) {
+    if (head == nullptr) {
+        head = new linkedListNode(value);
+    } else {
+        linkedListNode* current = head;
+        while (current->next != nullptr) {
+            current = current->next;
+        }
+        current->setNext(new linkedListNode(value));
+    }
+}
